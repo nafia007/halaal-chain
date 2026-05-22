@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd frontend && npm install --legacy-peer-deps && npm run build",
+  "installCommand": "echo Skipping root install — frontend handles its own deps",
+  "framework": null,
+  "outputDirectory": "frontend/dist",
+  "devCommand": "cd frontend && npm run dev"
+}
