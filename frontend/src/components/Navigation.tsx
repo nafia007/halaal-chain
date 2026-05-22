@@ -12,6 +12,9 @@ const dappLinks: NavItem[] = [
   { label: 'Balance', href: '/balance', isAnchor: false },
   { label: 'Contract', href: '/contract', isAnchor: false },
   { label: 'Verify', href: '/verify',  isAnchor: false },
+  { label: 'Issue', href: '/issue', isAnchor: false },
+  { label: 'Suspend', href: '/suspend', isAnchor: false },
+  { label: 'Compliance', href: '/compliance', isAnchor: false },
 ]
 
 export default function AppNavigation() {

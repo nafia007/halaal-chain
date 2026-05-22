@@ -167,6 +167,24 @@ app.post('/api/unsuspend', async (req, res) => {
   }
 });
 
+// ---- Issue certification --------------------------------------------------
+app.post('/api/issue', async (req, res) => {
+  try {
+    const contract = await getContract();
+    if (!contract) {
+      return res.status(503).json({ error: 'CONTRACT_ADDRESS not configured' });
+    }
+    const { account, amount, metadata } = req.body;
+    if (!account || !amount) {
+      return res.status(400).json({ error: 'account and amount are required in the request body' });
+    }
+    const tx = await contract.methods.issueCertification(account, amount, metadata || '').send({ from: process.env.ADMIN_ADDRESS });
+    res.json({ success: true, transactionHash: tx.transactionHash });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // ---- Recent events — CertificationIssued ---------------------------------
 app.get('/api/events/issued', async (req, res) => {
   try {
