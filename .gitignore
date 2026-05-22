@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Build artifacts
+artifacts/
+cache/
+typechain-types/
+dist/
+build/
+
+# Logs & local data
+hardhat.log
+*.log
+logs/
+
+# Env files
+.env
+.env.*
+.deployed
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+*.vscode
+.vscode_hardhat_config_*
+
+# Temp / backup
+App/
+frontend_old/
+
+# Test coverage
+coverage/
+coverage.json
+
+# Misc
+deployed-address.txt
